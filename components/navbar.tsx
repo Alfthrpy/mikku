@@ -40,7 +40,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost text-2xl">Mikku</a>
+          <a className="btn btn-ghost text-2xl" href="/">Mikku</a>
         </div>
         <div className="navbar-end">
           <button className="btn btn-ghost btn-circle">

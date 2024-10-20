@@ -31,10 +31,13 @@ export default function Navbar() {
                 <a href="/" className={`hover:text-secondary ${pathname === '/' ? 'active' : ''} `}>Home</a>
               </li>
               <li>
-                <a href="/playground" className={`hover:text-secondary ${pathname === '/playground' ? 'active' : ''} `}>Playground</a>
+                <a href="/learn" className={`hover:text-secondary ${pathname === '/learn' ? 'active' : ''} `}>Playground</a>
               </li>
               <li>
-                <a href="/emotion" className={`hover:text-secondary ${pathname === '/emotion' ? 'active' : ''} `}>Emotion</a>
+                <a href="/story" className={`hover:text-secondary ${pathname === '/story' ? 'active' : ''} `}>Story</a>
+              </li>
+              <li>
+                <a href="/tips" className={`hover:text-secondary ${pathname === '/tips' ? 'active' : ''} `}>Tips & Trick</a>
               </li>
             </ul>
           </div>

@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme='emerald'>
+    <html lang="en" data-theme='myTheme'>
       <head>
         {/* Add any meta tags, links, or scripts here if needed */}
       </head>

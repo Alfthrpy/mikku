@@ -60,7 +60,7 @@ export default function Learn() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-base-100 to-primary flex flex-col items-center p-8">
-      <h1 className="text-4xl font-extrabold text-secondary mb-6">Mengenal Emosi</h1>
+      <h1 className="text-4xl font-extrabold text-neutral mb-6">Mengenal Emosi</h1>
       <p className="text-xl mb-8 text-gray-700">
         Mari kita belajar mengenali berbagai emosi dengan cara yang menyenangkan!
       </p>

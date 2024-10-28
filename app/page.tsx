@@ -1,20 +1,39 @@
+"use client";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
+import { useState } from "react";
+import toast from 'react-hot-toast';
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    setLoading(true)
+    const res = await fetch("/api/contact-us", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, message }),
+    });
+
+    if (res.ok) {
+      toast.success("Pesan berhasil dikirim!")
+      setLoading(false)
+    } else {
+      toast.error("Gagal mengirim pesan, coba lagi nanti")
+      setLoading(false)
+    }
+  };
+
   return (
     <>
-      <div className="hero min-h-screen bg-base-200 relative">
-        <Image
-          src="/images/2.jpg" // Ganti dengan path gambar hero yang sesuai
-          alt="Gambar Hero"
-          layout="fill" // Mengisi seluruh area hero
-          objectFit="cover" // Memastikan gambar tetap terpotong dengan baik
-          className="rounded-lg" // Jika perlu, untuk efek rounded
-        />
+      <div className="hero min-h-screen bg-gradient-to-r from-base-100 via-base-200 to-base-400 relative">
         <div className="hero-content text-center relative z-10">
-          {" "}
           {/* Menambahkan z-index agar konten muncul di atas gambar */}
           <div className="max-w-lg">
             <h1 className="text-7xl font-bold">Mikku</h1>
@@ -22,7 +41,6 @@ export default function Home() {
               Bantu anak Anda belajar mengenali dan mengelola emosi dengan cara
               yang menyenangkan!
             </p>
-            <button className="btn btn-primary">Mulai Bermain</button>
           </div>
         </div>
       </div>
@@ -33,34 +51,34 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card bg-base-200 shadow-xl">
               <figure className="px-10 pt-10">
-                <Link href={'/learn'}>
-                <Image
-                  src="/images/1_20241020_174932_0000.png" // Mengubah ukuran gambar
-                  alt="Permainan Interaktif"
-                  width={300} // Ukuran baru
-                  height={250} // Ukuran baru
-                  className="rounded-xl"
-                />
+                <Link href={"/learn"}>
+                  <Image
+                    src="/images/1_20241020_174932_0000.png" // Mengubah ukuran gambar
+                    alt="Permainan Interaktif"
+                    width={300} // Ukuran baru
+                    height={250} // Ukuran baru
+                    className="rounded-xl"
+                  />
                 </Link>
-
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title">Permainan Interaktif Sekaligus Belajar </h2>
+                <h2 className="card-title">
+                  Permainan Interaktif Sekaligus Belajar{" "}
+                </h2>
                 <p>Belajar emosi melalui permainan seru dan menarik</p>
               </div>
             </div>
             <div className="card bg-base-200 shadow-xl">
               <figure className="px-10 pt-10">
-                <Link href={'/story'}>
-                <Image
-                  src="/images/2_20241020_174932_0001.png" // Mengubah ukuran gambar
-                  alt="Visual Menarik"
-                  width={300} // Ukuran baru
-                  height={250} // Ukuran baru
-                  className="rounded-xl"
-                />
+                <Link href={"/story"}>
+                  <Image
+                    src="/images/2_20241020_174932_0001.png" // Mengubah ukuran gambar
+                    alt="Visual Menarik"
+                    width={300} // Ukuran baru
+                    height={250} // Ukuran baru
+                    className="rounded-xl"
+                  />
                 </Link>
-
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">Kumpulan Dongeng</h2>
@@ -69,15 +87,15 @@ export default function Home() {
             </div>
             <div className="card bg-base-200 shadow-xl">
               <figure className="px-10 pt-10">
-                <Link href={'/tips'}>
-                <Image
-                  src="/images/3_20241020_174932_0002.png" // Mengubah ukuran gambar
-                  alt="Panduan Orang Tua"
-                  width={300} // Ukuran baru
-                  height={250} // Ukuran baru
-                  className="rounded-xl"
-                /></Link>
-
+                <Link href={"/tips"}>
+                  <Image
+                    src="/images/3_20241020_174932_0002.png" // Mengubah ukuran gambar
+                    alt="Panduan Orang Tua"
+                    width={300} // Ukuran baru
+                    height={250} // Ukuran baru
+                    className="rounded-xl"
+                  />
+                </Link>
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">Panduan Orang Tua</h2>
@@ -105,7 +123,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Hubungi Kami</h2>
           <div className="flex justify-center">
-            <div className="card w-96 bg-base-200 shadow-xl">
+            <form
+              onSubmit={handleSubmit}
+              className="card w-96 bg-base-200 shadow-xl"
+            >
               <div className="card-body">
                 <h2 className="card-title">Kirim Pesan</h2>
                 <div className="form-control">
@@ -116,6 +137,9 @@ export default function Home() {
                     type="email"
                     placeholder="email@example.com"
                     className="input input-bordered"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="form-control">
@@ -125,13 +149,18 @@ export default function Home() {
                   <textarea
                     className="textarea textarea-bordered"
                     placeholder="Tulis pesan Anda di sini"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
                   ></textarea>
                 </div>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Kirim</button>
+                  <button type="submit" className="btn btn-primary">
+                    {loading ? <span className="loading loading-spinner loading-sm"></span> : "Kirim" }
+                  </button>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

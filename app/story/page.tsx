@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {FaBook,FaCrown } from 'react-icons/fa';
+import {FaBook,FaCrown,FaPersonBooth } from 'react-icons/fa';
 
 export default function Story() {
   return (
@@ -21,6 +21,13 @@ export default function Story() {
           <FaCrown className="text-6xl text-yellow-500 mb-4" /> {/* Ikon Smile */}
           <h2 className="text-2xl font-bold mb-2">Kisah Muslimah</h2>
           <p>Ayo Mendengarkan Kisah Para Muslimah</p>
+        </div>
+      </Link>
+      <Link href="/story/kisah-ahlakul-karimah" passHref>
+        <div className="bg-white shadow-xl rounded-lg p-8 hover:shadow-2xl transition-shadow duration-300 cursor-pointer w-80 h-64 flex flex-col justify-center items-center">
+          <FaPersonBooth className="text-6xl text-yellow-500 mb-4" /> {/* Ikon Smile */}
+          <h2 className="text-2xl font-bold mb-2">Kisah Akhlakul Karimah</h2>
+          <p>Ayo Mendengarkan Kisah tentang Ahlakul Karimah</p>
         </div>
       </Link>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from "next/image";
 const kisahNabi = [
   { name: 'Nabi Adam as', link: 'https://youtu.be/Vc4UzsmVBP0?si=-TmiGImKaCJ6nX_q', thumbnail: 'https://img.youtube.com/vi/Vc4UzsmVBP0/0.jpg' },
   { name: 'Nabi Idris as', link: 'https://youtu.be/Cx331HenqnU?si=vi33nIW2KEKEdrbb', thumbnail: 'https://img.youtube.com/vi/Cx331HenqnU/0.jpg' },
@@ -30,30 +30,36 @@ const kisahNabi = [
 
 const KisahNabiPage: React.FC = () => {
   return (
-<div className="p-4 sm:p-8">
-  <h1 className="text-xl sm:text-2xl font-bold mb-4">Kumpulan Kisah Nabi dan Rasul</h1>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    {kisahNabi.map((nabi) => (
-      <div key={nabi.name} className="bg-gray-100 p-4 rounded-lg shadow-md">
-        <a
-          href={nabi.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:underline flex items-center"
-        >
-          <img 
-            src={nabi.thumbnail} 
-            alt={`Thumbnail for ${nabi.name}`} 
-            loading="lazy" 
-            className="w-24 sm:w-32 h-auto mr-4 rounded" 
-          />
-          <span className="text-sm sm:text-base">{nabi.name}</span>
-        </a>
+    <div className="p-4 sm:p-8">
+      <h1 className="text-xl sm:text-2xl font-bold mb-8 text-center">
+        Kumpulan Kisah Muslimah
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {kisahNabi.map((kisah) => (
+          <a
+            key={kisah.name}
+            href={kisah.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden"
+          >
+            <div className="relative w-full h-48">
+              <Image
+                src={kisah.thumbnail}
+                alt={kisah.name}
+                layout="fill"
+                objectFit="cover"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4 text-center">
+              <h3 className="text-lg font-semibold">{kisah.name}</h3>
+              <p className="text-sm text-gray-500">Klik untuk menonton</p>
+            </div>
+          </a>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
-
+    </div>
   );
 };
 

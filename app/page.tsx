@@ -53,7 +53,7 @@ export default function Home() {
               <figure className="px-10 pt-10">
                 <Link href={"/learn"}>
                   <Image
-                    src="/images/1_20241020_174932_0000.png" // Mengubah ukuran gambar
+                    src="/images/tebak_ekspresi.png" // Mengubah ukuran gambar
                     alt="Permainan Interaktif"
                     width={300} // Ukuran baru
                     height={250} // Ukuran baru
@@ -72,7 +72,7 @@ export default function Home() {
               <figure className="px-10 pt-10">
                 <Link href={"/story"}>
                   <Image
-                    src="/images/2_20241020_174932_0001.png" // Mengubah ukuran gambar
+                    src="/images/dongeng.png" // Mengubah ukuran gambar
                     alt="Visual Menarik"
                     width={300} // Ukuran baru
                     height={250} // Ukuran baru
@@ -89,7 +89,7 @@ export default function Home() {
               <figure className="px-10 pt-10">
                 <Link href={"/tips"}>
                   <Image
-                    src="/images/3_20241020_174932_0002.png" // Mengubah ukuran gambar
+                    src="/images/panduan_orang_tua.png" // Mengubah ukuran gambar
                     alt="Panduan Orang Tua"
                     width={300} // Ukuran baru
                     height={250} // Ukuran baru

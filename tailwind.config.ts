@@ -14,16 +14,17 @@ const config: Config = {
     themes: [
     {
       mytheme: {
-        "primary": "#F9A825", // Text Orange
-        "secondary": "#A3D977", // Grass Green
-        "accent": "#FCD34D", // Chick Yellow
-        "neutral": "#D17A00", // Darker Orange (Text Outline)
-        "base-100": "#FDF2D7", // Background Beige
-        "info": "#FEF7E3", // Sky White
-        "success": "#81C784", // Complementing Green
-        "warning": "#FFB74D", // Darker Yellow
-        "error": "#E57373",  // Red-orange
-      },
+        "primary": "#FFFFFF",       // Primary White
+        "secondary": "#F0F0F0",     // Light Gray
+        "accent": "#E0E0E0",        // Lighter Gray for Accent
+        "neutral": "#CFCFCF",       // Neutral Gray for Text Outline
+        "base-100": "#FFFFFF",      // Base White Background
+        "info": "#F9F9F9",          // Very Light Gray for Info
+        "success": "#D0D0D0",       // Light Gray as Success Highlight
+        "warning": "#E8E8E8",       // Soft Light Gray for Warning
+        "error": "#CCCCCC",         // Subtle Light Gray for Error
+      }
+      
     }],
   },
 };

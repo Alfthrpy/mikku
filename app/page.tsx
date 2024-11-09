@@ -3,16 +3,16 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     const res = await fetch("/api/contact-us", {
       method: "POST",
       headers: {
@@ -22,11 +22,11 @@ export default function Home() {
     });
 
     if (res.ok) {
-      toast.success("Pesan berhasil dikirim!")
-      setLoading(false)
+      toast.success("Pesan berhasil dikirim!");
+      setLoading(false);
     } else {
-      toast.error("Gagal mengirim pesan, coba lagi nanti")
-      setLoading(false)
+      toast.error("Gagal mengirim pesan, coba lagi nanti");
+      setLoading(false);
     }
   };
 
@@ -110,11 +110,18 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Tentang Kami</h2>
           <p className="text-center max-w-2xl mx-auto">
-            Taman Emosi Kita adalah aplikasi edukatif yang dirancang khusus
-            untuk membantu anak-anak usia 5-7 tahun dalam mengenali dan
-            mengelola emosi mereka. Dibuat oleh tim ahli psikologi anak dan
-            pengembang aplikasi, kami berkomitmen untuk menciptakan pengalaman
-            belajar yang menyenangkan dan bermanfaat.
+            Selamat datang di MIKKU, aplikasi yang dirancang untuk mendukung
+            perkembangan sosial emosional anak melalui pendekatan yang kreatif
+            dan edukatif. MIKKU dibuat oleh kelompok mahasiswa jurusan
+            Pendidikan Islam Anak Usia Dini yang bekerja sama dengan mahasiswa
+            pengembang aplikasi, dengan tujuan menghadirkan pembelajaran
+            bermakna yang memperkuat keterampilan sosial dan emosional anak.
+            Aplikasi MIKKU, dirancang khusus untuk anak usia 3-4 tahun. Di dalam
+            aplikasi MIKKU, kami menggabungkan kisah inspiratif, ekspresi wajah,
+            dan permainan interaktif supaya anak-anak dapat belajar nilai-nilai
+            penting, seperti empati, kejujuran, dan kerja sama, dalam suasana
+            yang menyenangkan dan aman. Terima kasih telah mempercayakan
+            perjalanan belajar anak bersama MIKKU!
           </p>
         </div>
       </div>
@@ -156,7 +163,11 @@ export default function Home() {
                 </div>
                 <div className="card-actions justify-end">
                   <button type="submit" className="btn btn-primary">
-                    {loading ? <span className="loading loading-spinner loading-sm"></span> : "Kirim" }
+                    {loading ? (
+                      <span className="loading loading-spinner loading-sm"></span>
+                    ) : (
+                      "Kirim"
+                    )}
                   </button>
                 </div>
               </div>

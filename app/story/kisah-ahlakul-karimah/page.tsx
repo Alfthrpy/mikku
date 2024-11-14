@@ -151,21 +151,27 @@ const data = {
     ],
     "Seri Syamil Dodo": [
       {
-        "name": "alam kandungan",
-        "link": "https://youtu.be/2iUr47jzUP0?si=edpky6R7I9m0AqJy",
-        "thumbnail": "https://img.youtube.com/vi/2iUr47jzUP0/maxresdefault.jpg"
+        "name": "ikhlas",
+        "link": "https://youtu.be/D__LmDM5EfQ?si=xJi4cLLDm6lvEbMm",
+        "thumbnail": "https://img.youtube.com/vi/D__LmDM5EfQ/0.jpg"
       },
       {
-        "name": "alam dunia",
-        "link": "https://youtu.be/6hK1zhM0N1c?si=C9DAkaPVWSB7n-zR",
-        "thumbnail": "https://img.youtube.com/vi/6hK1zhM0N1c/0.jpg"
+        "name": "sabar",
+        "link": "https://youtu.be/_p9F3rJXhyw?si=GQrqLv6HorDEiuxH",
+        "thumbnail": "https://img.youtube.com/vi/_p9F3rJXhyw/0.jpg"
       },
       {
-        "name": "alam barzah",
-        "link": "https://youtu.be/-no6Y_gAyb8?si=bm8MhItGSCY-kXAJ",
-        "thumbnail": "https://img.youtube.com/vi/-no6Y_gAyb8/0.jpg"
+        "name": "jujur",
+        "link": "https://youtu.be/_LRWl6TG6IU?si=rCJbwQNW7NMH_niJ",
+        "thumbnail": "https://img.youtube.com/vi/_LRWl6TG6IU/0.jpg"
+      },
+      {
+        "name": "sifat nabi",
+        "link": "https://youtu.be/-O1IizfRofA?feature=shared",
+        "thumbnail": "https://img.youtube.com/vi/-O1IizfRofA/0.jpg"
       }
     ]
+    
   }
 
   type VideoItem = {

@@ -109,20 +109,32 @@ export default function Home() {
       <div id="tentang" className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Tentang Kami</h2>
-          <p className="text-center max-w-2xl mx-auto">
-            Selamat datang di MIKKU, aplikasi yang dirancang untuk mendukung
-            perkembangan sosial emosional anak melalui pendekatan yang kreatif
-            dan edukatif. MIKKU dibuat oleh kelompok mahasiswa jurusan
-            Pendidikan Islam Anak Usia Dini yang bekerja sama dengan mahasiswa
-            pengembang aplikasi, dengan tujuan menghadirkan pembelajaran
-            bermakna yang memperkuat keterampilan sosial dan emosional anak.
-            Aplikasi MIKKU, dirancang khusus untuk anak usia 3-4 tahun. Di dalam
-            aplikasi MIKKU, kami menggabungkan kisah inspiratif, ekspresi wajah,
-            dan permainan interaktif supaya anak-anak dapat belajar nilai-nilai
-            penting, seperti empati, kejujuran, dan kerja sama, dalam suasana
-            yang menyenangkan dan aman. Terima kasih telah mempercayakan
-            perjalanan belajar anak bersama MIKKU!
-          </p>
+          <div className="text-center max-w-2xl mx-auto space-y-6">
+            <p>
+              Selamat datang di <strong>MIKKU</strong>, aplikasi yang dirancang
+              untuk mendukung perkembangan sosial emosional anak melalui
+              pendekatan yang kreatif dan edukatif. MIKKU dibuat oleh kelompok
+              mahasiswa jurusan Pendidikan Islam Anak Usia Dini yang bekerja
+              sama dengan mahasiswa pengembang aplikasi.
+            </p>
+            <p>
+              Tujuan utama kami adalah menghadirkan pembelajaran bermakna yang
+              memperkuat keterampilan sosial dan emosional anak. Aplikasi ini
+              dirancang khusus untuk anak usia 3-4 tahun, dengan konten yang
+              sesuai perkembangan usia mereka.
+            </p>
+            <p>
+              Di dalam aplikasi MIKKU, kami menggabungkan kisah inspiratif,
+              ekspresi wajah, dan permainan interaktif untuk membantu anak-anak
+              belajar nilai-nilai penting, seperti empati, kejujuran, dan kerja
+              sama, dalam suasana yang menyenangkan dan aman.
+            </p>
+            <p>
+              Terima kasih telah mempercayakan perjalanan belajar anak bersama
+              MIKKU! Kami berharap aplikasi ini dapat menjadi teman belajar yang
+              berharga bagi anak-anak Anda.
+            </p>
+          </div>
         </div>
       </div>
 

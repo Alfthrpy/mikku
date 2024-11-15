@@ -2,13 +2,14 @@
 import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import toast from "react-hot-toast";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -30,9 +31,35 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    // Function to check if the screen is in mobile or landscape mode
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Menetapkan breakpoint untuk mobile
+    };
+
+    // Initial check
+    handleResize();
+
+    // Event listener untuk memonitor perubahan ukuran layar
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      <div className="hero min-h-screen bg-gradient-to-r from-base-100 via-base-200 to-base-400 relative">
+      <div className="hero min-h-screen relative bg-gradient-to-r from-base-100 via-base-200 to-base-400">
+      <Image
+        src={
+          isMobile
+            ? "/images/hijau putih ilustrasi hari santri nasional banner_20241115_092307_00002.png" // Gambar untuk mobile
+            : "/images/hijau putih ilustrasi hari santri nasional banner_20241115_092307_0000.png"   // Gambar untuk desktop
+        }
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center top"
+        className="z-0 opacity-50"
+      />
         <div className="hero-content text-center relative z-10">
           {/* Menambahkan z-index agar konten muncul di atas gambar */}
           <div className="max-w-lg">
@@ -53,17 +80,17 @@ export default function Home() {
               <figure className="px-10 pt-10">
                 <Link href={"/learn"}>
                   <Image
-                    src="/images/tebak_ekspresi.png" // Mengubah ukuran gambar
+                    src="/images/tebak_ekspresi.png"
                     alt="Permainan Interaktif"
-                    width={300} // Ukuran baru
-                    height={250} // Ukuran baru
+                    width={300}
+                    height={250}
                     className="rounded-xl"
                   />
                 </Link>
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">
-                  Permainan Interaktif Sekaligus Belajar{" "}
+                  Permainan Interaktif Sekaligus Belajar
                 </h2>
                 <p>Belajar emosi melalui permainan seru dan menarik</p>
               </div>
@@ -72,10 +99,10 @@ export default function Home() {
               <figure className="px-10 pt-10">
                 <Link href={"/story"}>
                   <Image
-                    src="/images/dongeng.png" // Mengubah ukuran gambar
+                    src="/images/dongeng.png"
                     alt="Visual Menarik"
-                    width={300} // Ukuran baru
-                    height={250} // Ukuran baru
+                    width={300}
+                    height={250}
                     className="rounded-xl"
                   />
                 </Link>
@@ -89,10 +116,10 @@ export default function Home() {
               <figure className="px-10 pt-10">
                 <Link href={"/tips"}>
                   <Image
-                    src="/images/panduan_orang_tua.png" // Mengubah ukuran gambar
+                    src="/images/panduan_orang_tua.png"
                     alt="Panduan Orang Tua"
-                    width={300} // Ukuran baru
-                    height={250} // Ukuran baru
+                    width={300}
+                    height={250}
                     className="rounded-xl"
                   />
                 </Link>

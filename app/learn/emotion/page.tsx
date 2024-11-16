@@ -37,7 +37,7 @@ export default function Learn() {
         desc: "Perasaan Jijik dan Mual.",
         color: "bg-green-500",
         emoji: "🤮",
-        image: "/images/jijik.png", // Tambahkan path gambar
+        image: "/images/Jijik.png ", // Tambahkan path gambar
       },
       {
         name: "Takut",

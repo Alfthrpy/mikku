@@ -37,7 +37,7 @@ export default function EmotionGame() {
       desc: "Perasaan Jijik dan Mual.",
       color: "bg-green-500",
       emoji: "🤮",
-      image: "/images/Jijik.png",
+      image: "/images/jijik.png",
     },
     {
       name: "Takut",

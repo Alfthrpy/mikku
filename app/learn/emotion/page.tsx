@@ -37,7 +37,7 @@ export default function Learn() {
         desc: "Perasaan Jijik dan Mual.",
         color: "bg-green-500",
         emoji: "🤮",
-        image: "/images/jijik.png", // Tambahkan path gambar
+        image: "/images/test.png", // Tambahkan path gambar
       },
       {
         name: "Takut",
@@ -74,6 +74,9 @@ export default function Learn() {
               alt={`Gambar emosi ${emosi.name}`}
               width={400}
               height={300}
+              onError={(e) => {
+                e.currentTarget.src = '/images/jijik.png'; // Gambar fallback jika gagal dimuat
+              }}
               className="rounded-lg mb-4"
             />
             <div className={`rounded-full w-16 h-16 flex items-center justify-center text-5xl ${emosi.color}`}>

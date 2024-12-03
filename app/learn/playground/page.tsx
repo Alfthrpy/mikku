@@ -66,13 +66,24 @@ export default function EmotionGame() {
     endSound.current = new Audio("/sound/end.mp3");
   }, []);
 
+  const playSound = (audioRef: React.MutableRefObject<HTMLAudioElement | null>) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0; // Reset posisi pemutaran ke awal
+      audioRef.current.play(); // Mainkan audio
+    }
+  };
+
+  const playRightSound = () => playSound(rightSound);
+  const playWrongSound = () => playSound(wrongSound);
+  const playEndSound = () => playSound(endSound);
+
   const handleAnswer = (emoji: string) => {
     if (emoji === emosiList[currentQuestion.index].emoji) {
       setScore(score + 1); // Tambah poin jika jawabannya benar
-      rightSound.current?.play(); // Mainkan sound effect benar
+      playRightSound(); // Mainkan sound effect benar
       setFeedbackColor("bg-green-500"); // Indikasi warna hijau untuk jawaban benar
     } else {
-      wrongSound.current?.play(); // Mainkan sound effect salah
+      playWrongSound(); // Mainkan sound effect salah
       setFeedbackColor("bg-red-500"); // Indikasi warna merah untuk jawaban salah
     }
 
@@ -86,7 +97,7 @@ export default function EmotionGame() {
       }));
     } else {
       setShowResult(true); // Tampilkan hasil setelah 5 pertanyaan selesai
-      endSound.current?.play(); // Mainkan sound effect akhir game
+      playEndSound(); // Mainkan sound effect akhir game
     }
   };
 

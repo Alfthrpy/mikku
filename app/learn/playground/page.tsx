@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import {useRef, useState } from "react";
 import Image from "next/image";
 
 export default function EmotionGame() {
@@ -55,19 +55,20 @@ export default function EmotionGame() {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [feedbackColor, setFeedbackColor] = useState(""); // State untuk feedback warna
+  
 
   // Sound effects
-  const rightSound = new Audio("/sound/right.mp3");
-  const wrongSound = new Audio("/sound/wrong.mp3");
-  const endSound = new Audio("/sound/end.mp3");
+  const rightSound = useRef(new Audio("/sound/right.mp3"));
+  const wrongSound = useRef(new Audio("/sound/wrong.mp3"));
+  const endSound = useRef(new Audio("/sound/end.mp3"));
 
   const handleAnswer = (emoji: string) => {
     if (emoji === emosiList[currentQuestion.index].emoji) {
       setScore(score + 1); // Tambah poin jika jawabannya benar
-      rightSound.play(); // Mainkan sound effect benar
+      rightSound.current.play(); // Mainkan sound effect benar
       setFeedbackColor("bg-green-500"); // Indikasi warna hijau untuk jawaban benar
     } else {
-      wrongSound.play(); // Mainkan sound effect salah
+      wrongSound.current.play(); // Mainkan sound effect salah
       setFeedbackColor("bg-red-500"); // Indikasi warna merah untuk jawaban salah
     }
 
@@ -81,7 +82,7 @@ export default function EmotionGame() {
       }));
     } else {
       setShowResult(true); // Tampilkan hasil setelah 5 pertanyaan selesai
-      endSound.play(); // Mainkan sound effect akhir game
+      endSound.current.play(); // Mainkan sound effect akhir game
     }
   };
 

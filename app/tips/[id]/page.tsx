@@ -1,7 +1,7 @@
 'use client'
 
 // pages/article/[id].js
-import articles from '@/lib/data';
+import {articles} from '@/lib/data';
 import { useParams } from 'next/navigation';
 
 export default function ArticlePage() {

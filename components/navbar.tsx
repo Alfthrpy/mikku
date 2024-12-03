@@ -39,6 +39,9 @@ export default function Navbar() {
               <li>
                 <a href="/tips" className={`hover:text-secondary ${pathname === '/tips' ? 'active' : ''} `}>Tips & Trick</a>
               </li>
+              <li>
+                <a href="/about" className={`hover:text-secondary ${pathname === '/about' ? 'active' : ''} `}>About Us</a>
+              </li>
             </ul>
           </div>
         </div>

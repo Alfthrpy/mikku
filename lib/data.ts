@@ -83,4 +83,50 @@ const articles = [
   },
 ];
 
-export default articles;
+
+const emotions =  [
+  {
+    name: "Bahagia",
+    desc: "Perasaan senang dan bahagia.",
+    color: "bg-yellow-500",
+    emoji: "😊",
+    image: "/images/senang.png",
+  },
+  {
+    name: "Sedih",
+    desc: "Perasaan sedih dan melankolis.",
+    color: "bg-blue-500",
+    emoji: "😢",
+    image: "/images/sedih.png",
+  },
+  {
+    name: "Marah",
+    desc: "Perasaan Kesal dan geram.",
+    color: "bg-red-500",
+    emoji: "😡",
+    image: "/images/marah.png",
+  },
+  {
+    name: "Kaget",
+    desc: "Perasaan terkejut dan kaget.",
+    color: "bg-white-500",
+    emoji: "😱",
+    image: "/images/kaget.png",
+  },
+  {
+    name: "Jijik",
+    desc: "Perasaan Jijik dan Mual.",
+    color: "bg-green-500",
+    emoji: "🤮",
+    image: "/images/test.png",
+  },
+  {
+    name: "Takut",
+    desc: "Perasaan Takut dan gelisah.",
+    color: "bg-purple-500",
+    emoji: "😰",
+    image: "/images/takut.png",
+  },
+];
+
+export {articles,emotions}

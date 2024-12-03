@@ -1,5 +1,5 @@
 // pages/index.js
-import articles from '@/lib/data';
+import {articles} from '@/lib/data';
 import Link from 'next/link';
 
 export default function HomePage() {

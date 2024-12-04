@@ -21,7 +21,7 @@ export default function Learn() {
     {
       name: "Marah",
       desc: "Saat teman-temanmu terus mengganggu kamu dan tidak mau berhenti!",
-      color: "bg-red-500",
+      color: "bg-red-400",
       emoji: "/images/Emoji_marah.png",
       image: "/images/marah.png",
     },
@@ -35,14 +35,14 @@ export default function Learn() {
     {
       name: "Jijik",
       desc: "Saat kamu melihat sampah busuk dengan belatung di dalamnya... eww!",
-      color: "bg-green-500",
+      color: "bg-green-400",
       emoji: "/images/Emoji_jijik.png",
       image: "/images/test.png",
     },
     {
       name: "Takut",
       desc: "Saat ada petir besar yang menyambar di malam hari... bum!",
-      color: "bg-purple-500",
+      color: "bg-purple-400",
       emoji: "/images/Emoji_takut.png",
       image: "/images/takut.png",
     },
@@ -70,7 +70,7 @@ export default function Learn() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl">
         {emosiList.map((emosi) => (
-          <div key={emosi.name} className="card w-full bg-white shadow-xl p-4">
+          <div key={emosi.name} className={`card w-full bg-white shadow-xl p-4 ${emosi.color}`}>
             {/* Tambahkan gambar di atas deskripsi */}
             <Image
               src={emosi.image} // Path ke gambar
@@ -83,7 +83,7 @@ export default function Learn() {
               className="rounded-lg mb-4"
             />
             <div
-              className={`rounded-full w-20 h-20 flex items-center justify-center text-5xl ml-4`}
+              className={`rounded-full w-20 h-20 flex items-center justify-center text-5xl ml-5`}
             >
               <Image
                 src={emosi.emoji} // Path ke gambar
@@ -93,7 +93,7 @@ export default function Learn() {
                 onError={(e) => {
                   e.currentTarget.src = "/images/jijik.png"; // Gambar fallback jika gagal dimuat
                 }}
-                className="rounded-lg mb-4"
+                className="rounded-full mt-3"
               />
             </div>
             <div className="card-body">

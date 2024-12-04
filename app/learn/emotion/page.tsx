@@ -14,35 +14,35 @@ export default function Learn() {
     {
       name: "Sedih",
       desc: "Saat es krim kesukaanmu terjatuh ke lantai...",
-      color: "bg-blue-600",
+      color: "bg-blue-500",
       emoji: "/images/Emoji_sedih.png",
       image: "/images/sedih.png",
     },
     {
       name: "Marah",
       desc: "Saat teman-temanmu terus mengganggu kamu dan tidak mau berhenti!",
-      color: "bg-red-400",
+      color: "bg-red-500",
       emoji: "/images/Emoji_marah.png",
       image: "/images/marah.png",
     },
     {
       name: "Kaget",
       desc: "Saat ada yang tiba-tiba muncul tanpa aba-aba, seperti balon yang meletus!",
-      color: "bg-white-800",
+      color: "bg-white-500",
       emoji: "/images/Emoji_kaget.png",
       image: "/images/kaget.png",
     },
     {
       name: "Jijik",
       desc: "Saat kamu melihat sampah busuk dengan belatung di dalamnya... eww!",
-      color: "bg-green-400",
+      color: "bg-green-500",
       emoji: "/images/Emoji_jijik.png",
       image: "/images/test.png",
     },
     {
       name: "Takut",
       desc: "Saat ada petir besar yang menyambar di malam hari... bum!",
-      color: "bg-purple-400",
+      color: "bg-purple-500",
       emoji: "/images/Emoji_takut.png",
       image: "/images/takut.png",
     },
@@ -70,7 +70,7 @@ export default function Learn() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl">
         {emosiList.map((emosi) => (
-          <div key={emosi.name} className={`card w-full bg-white shadow-xl p-4 ${emosi.color}`}>
+          <div key={emosi.name} className={`card w-full shadow-xl p-4 ${emosi.color}`}>
             {/* Tambahkan gambar di atas deskripsi */}
             <Image
               src={emosi.image} // Path ke gambar

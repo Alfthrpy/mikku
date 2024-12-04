@@ -14,7 +14,7 @@ export default function EmotionGame() {
     {
       name: "Sedih",
       desc: "Perasaan sedih dan melankolis.",
-      color: "bg-blue-600",
+      color: "bg-blue-500",
       emoji: "/images/Emoji_sedih.png",
       image: "/images/sedih.png",
     },
@@ -28,7 +28,7 @@ export default function EmotionGame() {
     {
       name: "Kaget",
       desc: "Perasaan terkejut dan kaget.",
-      color: "bg-white-800",
+      color: "bg-white-500",
       emoji: "/images/Emoji_kaget.png",
       image: "/images/kaget.png",
     },
@@ -136,7 +136,7 @@ export default function EmotionGame() {
             {emosiList.map((emosi) => (
               <button
                 key={emosi.name}
-                className={`text-center bg-gray-100 rounded-lg p-4 hover:bg-gray-200 transition ${emosi.color}`}
+                className={`text-center rounded-lg p-4 hover:bg-gray-200 transition ${emosi.color}`}
                 onClick={() => handleAnswer(emosi.emoji)}
               >
                 <div

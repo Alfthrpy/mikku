@@ -136,7 +136,7 @@ export default function EmotionGame() {
             {emosiList.map((emosi) => (
               <button
                 key={emosi.name}
-                className={`text-center rounded-lg p-4 hover:bg-gray-200 transition ${emosi.color}`}
+                className={`text-center rounded-lg p-4 hover:bg-gray-200 transition ${emosi.color} shadow-md`}
                 onClick={() => handleAnswer(emosi.emoji)}
               >
                 <div
